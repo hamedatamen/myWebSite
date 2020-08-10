@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: 1px solid red;
+    position: relative;
+}
+header{
+    width: 100%;
+    height: 10vh;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+ul{
+    list-style: none;
+    border-radius: 5%;
+    font-size: large;
+    color: darkcyan;
+}
+header ul{
+    margin-left: 3vh;
+    margin-right: 3vh;
+    display: flex;
+    justify-content: space-around;
+}
+header ul:last-child{
+    width: 40%;
+}
+header li{
+    display: inline;
+    transition: 1.5s;
+}
+header li:hover{
+    transform: scale(1.2,1.2);
+    /* box-shadow: 1px 1px seagreen; */
+    animation: headerli .3s;
+    animation-delay: 0;
+
+    opacity: .5;
+}
+@keyframes headerli{
+    0%, 100%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translate(-5px);
+    }
+    50%{
+        transform: translate(10px);
+    }
+    75%{
+        transform: translate(-5px);
+    }
+    90%{
+        transform: translate(10px);
+    }
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@ info @@@@@@@@@@@@@@@@@@@@  */
+
+.info{
+    margin-top: 75px;
+    /* border: 3px solid yellow; */
+    background-image: url(../image/coding-vs-programming-info.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 88vh;
+    position: relative;
+}
+.infoBox{
+    position: absolute;
+    border-radius: 1%;
+    top: 20%;
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.info .infoBox:first-child{
+    width: 40%;
+    left: 1%;
+    background-image: url(../image/hamedinfoc.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: top;
+    animation: infoleft 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: 2.5s;
+    opacity: .1;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.info .infoBox:last-child{
+    width: 40%;
+    right: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: normal normal normal 30px/1.4em avenir-lt-w01_35-light1475496,sans-serif;
+    background-color: gainsboro;
+    animation: inforight 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: 2.5s;
+    opacity: .1;
+}
+.info ul{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+@keyframes infoleft{
+    to{
+        opacity: 1;
+        left: 10%;
+    }
+}
+@keyframes inforight{
+    to{
+        opacity: 1;
+        right: 10%;
+    }
+}
+
+
+@media only screen and (min-width: 600px){
+    header  .fa{
+        display: none;
+    }
+}    
+
+@media only screen and (max-width: 600px){
+    header ul:first-child{
+        width: 50%;
+    }
+    
+    header ul:last-child{
+        display: none;
+    }
+    header {
+        justify-content: space-around;
+    }
+    /* .info{
+        flex-direction: column;
+    } */
+    .infoBox{
+        border-radius: 0;
+    }
+    .info .infoBox:first-child{
+        width: 80%;
+        height: 35vh;
+        margin-left: auto;
+        margin-right: auto;
+        top: 2%;
+    }
+    .info .infoBox:last-child{
+        width: 80%;
+        height: 50vh;
+        margin-left: auto;
+        margin-right: auto;
+        top: 42%;
+    }
+    
+    .info ul li:last-child{
+        display: none;
+    }
+   
+   
+}
